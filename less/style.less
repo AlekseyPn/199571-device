@@ -1,0 +1,83 @@
+@import "normalize";
+
+// Variables
+
+@primary-color: rgb(240, 197, 46);
+@second-color: rgb(229, 229, 229);
+@footer-color: rgb(70, 70, 70);
+@text-color: rgb(0, 0, 0);
+@fontPrimary: "Gilroy";
+@fontSecond: "OpenSans";
+@fontPrimaryBold: "@{fontPrimary}-Bold";
+@fontSecondLight: "@{fontSecond}-Light";
+@path: "../img/stylesheet.png";
+
+// Font mixin
+
+.font(@fontName; @urlName: @fontName; @weight: normal; @style: normal) {
+    font-family: @fontName;
+    src: url("../fonts/@{urlName}.woff") format("woff"),
+         url("../fonts/@{urlName}.woff2") format("woff2");
+    font-weight: @weight;
+    font-style: @style;     
+}
+
+.link {  
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 800;
+  font-family: "Gilroy-Bold", sans-serif;
+  text-transform: uppercase;
+  color: black;
+}
+
+.text {
+   font-size: 15px;
+  line-height: 30px;
+  font-weight: 300;
+  font-family: "OpenSans-Light", sans-serif;  
+  color: rgb(70, 70, 70); 
+}
+
+.line(@color; @x; @y) {
+    position: absolute;
+    top: @x;
+    left: @y;
+
+    width: 100px;
+    height: 7px;
+    background: @color;
+}
+
+.indicator {
+  height: 10px;
+  background-color: white;
+  border: 3px solid black;  
+}
+
+/*Fonts*/
+@font-face {
+    .font(@fontPrimary; @fontPrimary; 300);
+}
+
+@font-face {
+    .font(@fontPrimaryBold; @fontPrimaryBold; 800);
+}
+
+@font-face {
+    .font(@fontSecond);
+}
+
+@font-face {
+    .font(@fontSecondLight; @fontSecondLight; 300);
+}
+
+/*Primary Style*/
+.clearfix{
+    &::before,
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
