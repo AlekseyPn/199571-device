@@ -415,12 +415,6 @@ a {
   text-decoration: none;
   transition: all 0.2s ease-in;
 }
-a:hover {
-  opacity: 0.6;
-}
-a:active {
-  opacity: 0.3;
-}
 ul {
   margin: 0;
   padding: 0;
@@ -436,6 +430,12 @@ ul li {
 .page-header {
   background: #f0c52e;
   background: linear-gradient(to bottom, #fff 0, #fff 40px, rgba(240, 197, 46, 0.5) 40px);
+}
+.page-header a:hover {
+  opacity: 0.6;
+}
+.page-header a:active {
+  opacity: 0.3;
 }
 .logo {
   width: 100%;
@@ -507,6 +507,7 @@ ul li {
 }
 .site-search__button:active {
   color: rgba(255, 255, 255, 0.3);
+  background: #000000;
 }
 .site-search__input:focus + .site-search__button {
   display: inline-block;
@@ -561,7 +562,7 @@ ul li {
 .menu {
   float: left;
   width: 100%;
-  margin-top: 35px;
+  margin-top: 32px;
 }
 .menu a {
   font-size: 18px;
@@ -610,13 +611,14 @@ ul li {
   position: absolute;
   top: 54px;
   left: -60px;
+  z-index: 30;
   display: none;
   width: 1160px;
   height: 130px;
-  padding: 0 60px;
+  padding: 0 60px 5px;
   padding-right: 546px;
   font-size: 0;
-  background: rgba(255, 255, 255, 0.2);
+  background: #f7e296;
 }
 .menu .sub-menu__item {
   display: inline-block;
@@ -641,15 +643,16 @@ ul li {
 .slider {
   position: relative;
   padding-top: 1px;
+  padding-left: 31px;
   background: #f0c52e;
-  background: linear-gradient(to bottom, rgba(240, 197, 46, 0.5) 0, rgba(240, 197, 46, 0.5) 111px, #fff 111px);
+  background: linear-gradient(to bottom, rgba(240, 197, 46, 0.5) 0, rgba(240, 197, 46, 0.5) 106px, #fff 106px);
 }
 .slider input {
   display: none;
 }
 .slider__controls {
   position: absolute;
-  top: 63%;
+  top: 65%;
   right: 84px;
   z-index: 999;
   font-size: 0;
@@ -675,10 +678,10 @@ ul li {
   position: relative;
   display: none;
   width: 100%;
-  padding-left: 539px;
+  padding-left: 568px;
   background-image: url(../img/slide-picture-1.png), url(../img/number-picture-1.png);
   background-repeat: no-repeat;
-  background-position: 30px 0, top 8px right 0;
+  background-position: 59px 0, top 8px right 0;
 }
 .slider__slides::before {
   content: "";
@@ -692,7 +695,7 @@ ul li {
 }
 .slider__slides .slider__title {
   margin: 0;
-  padding-top: 77px;
+  padding-top: 74px;
   font-size: 47px;
 }
 .slider__slides .slider__text {
@@ -708,7 +711,7 @@ ul li {
   position: relative;
   display: inline-block;
   width: 43.91217565%;
-  padding: 10px 0;
+  padding: 9px 0;
   font-size: 18px;
   letter-spacing: 0.2em;
   text-align: center;
@@ -764,6 +767,152 @@ ul li {
 .slider__radio--1:checked ~ .slider__slides:nth-of-type(2),
 .slider__radio--2:checked ~ .slider__slides:nth-of-type(3),
 .slider__radio--3:checked ~ .slider__slides:nth-of-type(4) {
+  display: block;
+}
+.slider__slides:nth-of-type(3) {
+  background-image: url(../img/slide-picture-2.png), url(../img/number-picture-2.png);
+  background-position: 85px 0, top 8px right 0;
+}
+.slider__slides:nth-of-type(4) {
+  background-image: url(../img/slide-picture-3.png), url(../img/number-picture-3.png);
+  background-position: 0px 56px, top 8px right 0;
+}
+.popular {
+  max-width: 1160px;
+  margin: 0 auto;
+  margin-top: 82px;
+  font-size: 0;
+}
+.popular__item {
+  display: inline-block;
+  vertical-align: top;
+  width: 13.79310345%;
+  margin-right: 39px;
+}
+.popular__item:last-child {
+  margin-right: 0;
+}
+.popular__item:hover .popular__picture {
+  background: #f0c52e;
+}
+.popular__item:active .popular__picture img,
+.popular__item:active .popular__text {
+  opacity: 0.3;
+}
+.popular__picture {
+  width: 160px;
+  height: 160px;
+  background: rgba(240, 197, 46, 0.5);
+}
+.popular__picture img {
+  display: block;
+  height: auto;
+}
+.popular__text {
+  margin-top: 32px;
+  font-size: 18px;
+  font-weight: 800;
+  font-family: "Gilroy-Bold", sans-serif;
+}
+.service {
+  margin-top: 68px;
+  background: #e6e6e6;
+  background: linear-gradient(to bottom, #fff 0, #fff 100px, #e6e6e6 100px, #e6e6e6);
+}
+.service .container {
+  padding: 0;
+  padding-bottom: 70px;
+}
+.service input {
+  display: none;
+}
+.service__controls {
+  float: left;
+  width: 24.48275862%;
+  padding: 80px 0 43px;
+  box-shadow: inset -7px 0 0 0 #000;
+}
+.service__controls label {
+  margin-bottom: 25px;
+  position: relative;
+  display: block;
+  width: 56.33802817%;
+  padding: 9px 0;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+  padding-left: 5px;
+  color: #000;
+  cursor: pointer;
+}
+.service__controls label::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  bottom: 17px;
+  left: 0;
+  right: 0;
+  background: #f0c52e;
+  z-index: -1;
+  transition: all 0.2s ease-in;
+}
+.service__controls label:hover::before {
+  top: 0;
+  bottom: 0;
+}
+.service__radio--1:checked ~ .service__controls label[for="service-tab-1"],
+.service__radio--2:checked ~ .service__controls label[for="service-tab-2"],
+.service__radio--3:checked ~ .service__controls label[for="service-tab-3"] {
+  color: #f7e184;
+}
+.service__radio--1:checked ~ .service__controls label[for="service-tab-1"]::before,
+.service__radio--2:checked ~ .service__controls label[for="service-tab-2"]::before,
+.service__radio--3:checked ~ .service__controls label[for="service-tab-3"]::before {
+  top: 0;
+  bottom: 0;
+  right: -117px;
+  background: #000;
+}
+.service__desc {
+  float: right;
+  width: 65.51724138%;
+  display: none;
+  padding-top: 69px;
+  padding-right: 330px;
+  padding-bottom: 30px;
+}
+.service__desc--deliver {
+  background: url(../img/delivery.png) no-repeat;
+  background-position: top 85px right 66px;
+}
+.service__desc--warranty {
+  background: url(../img/warranty.png) no-repeat;
+  background-position: top 60px right 46px;
+}
+.service__desc--credit {
+  background: url(../img/credit.png) no-repeat;
+  background-position: top 59px right 70px;
+}
+.service__title {
+  margin: 0;
+  font-size: 47px;
+  font-weight: 800;
+  font-family: "Gilroy-Bold", sans-serif;
+}
+.service__text {
+  margin: 0;
+  margin-top: 25px;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 300;
+  font-family: "OpenSans-Light", sans-serif;
+  color: #464646;
+}
+.service__radio--1:checked ~ .service__desc--deliver,
+.service__radio--2:checked ~ .service__desc--warranty,
+.service__radio--3:checked ~ .service__desc--credit {
   display: block;
 }
 .none {
