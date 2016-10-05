@@ -34,13 +34,11 @@
   color: rgb(70, 70, 70); 
 }
 
-.line(@color; @x; @y; @ry) {    
+.line(@color; @x; @width) {    
     position: absolute;
-    top: @x;
-    left: @y;
-    right: @ry;
+    top: @x;    
 
-    width: 100px;
+    width: @width;
     height: 7px;
     background: @color;
 }
@@ -98,9 +96,15 @@
 
 /*Primary Style*/
 body {
+    position: relative;
     font: 800 18px @fontPrimaryBold, "Arial", sans-serif;
     letter-spacing: 0.01em;
     color: rgb(0, 0, 0);
+}
+
+img {
+    display: block;
+    height: auto;
 }
 
 a {
@@ -122,11 +126,11 @@ ul {
 
 .container {
     max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 60px;
+    margin: 0 auto;    
 }
 
 .page-header {
+    padding: 0 60px;
     background: #f0c52e;
     background: linear-gradient(to bottom, #fff 0, #fff 40px, rgba(240, 197, 46, 0.5) 40px);
     a {
@@ -351,6 +355,7 @@ ul {
     position: relative;    
     padding-top: 1px;
     padding-left: 31px;
+    padding-right: 60px;
     background: #f0c52e;
     background: linear-gradient(to bottom,rgba(240, 197, 46, 0.5) 0, rgba(240, 197, 46, 0.5) 106px, #fff 106px);
     input {
@@ -383,7 +388,8 @@ ul {
         background-position: 59px 0, top 8px right 0;
         &::before {
             content: "";
-            .line(#fff; 37px; none; 400px);
+            .line(#fff; 37px; 100px);
+            right: 400px;
         }
         .slider__title {
             margin: 0;
@@ -571,6 +577,277 @@ ul {
     &__radio--3:checked ~ &__desc--credit {
         display: block;
     }    
+}
+
+.vendor {
+    width: 100%;
+    margin-top: 94px;
+    font-size: 0;
+    &__link {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: (260px/1160px)*100%;
+        height: 100px;
+        margin-right: 39px;
+        &:hover::before {
+            content: "";
+            position: absolute;
+            top: 0;bottom: 0;left: 0;right: 0;
+            width: 260px;
+            height: 100px;
+            background-image: url(../img/vendor-sprite.png);
+            background-repeat: no-repeat;                        
+        }
+        &:nth-child(1)::before {
+                background-position: 0 0;
+            }
+            &:nth-child(2)::before {
+                background-position: -300px 0;
+            }
+            &:nth-child(3)::before {
+                background-position: -600px 0;
+            }
+            &:nth-child(4)::before {
+                background-position: -897px 0;
+            }        
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.company {    
+    width: 100%;
+    margin-top: 96px;    
+    &--line {
+        &::before {
+        content: "";
+        .line(#000; 0; 80px);
+        left: 0;
+    }
+    }
+    &__about-us {
+        position: relative;
+        float: left;
+        width: (480px/1160px)*100%;
+        padding: 47px 0;
+        .company__btn {            
+            margin-top: 57px;
+            .btn(#ffd43e; 17px; 260px; 480px; block);    
+        }        
+    }
+    &__title {
+        margin: 0;
+        margin-bottom: 38px;
+        font-size: 47px;
+        font-weight: 800;
+        font-family: @fontPrimaryBold, sans-serif;
+    }
+    &__text {
+        margin-bottom: 32px;
+        .text;
+    }
+    &__item {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            margin-top: -3px;
+            border: 3px solid rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+        }
+    }
+
+    &__link {        
+        padding-left: 35px;
+        font-size: 16px;
+        line-height: 40px;
+        font-weight: 800;
+        font-family: @fontPrimaryBold, sans-serif;
+    }    
+
+    &__contact {
+        position: relative;
+        float: right;
+        width: (560px/1160px)*100%;
+        padding: 47px 0;
+        .company__btn {
+        margin-top: 70px;
+        .btn(#ffd43e; 17px; 260px; 560px; block);
+        }
+        .company__text {
+            margin-bottom: 38px;
+        }
+    }
+    
+}
+
+.page-footer {
+    margin-top: 34px;
+    background: #444;
+    padding: 60px 0;
+    .logo {
+        float: left;
+        width: 50%;
+        margin: 0;
+        &__link--ylw {
+            color: rgb(247, 225, 132);
+            &:hover {
+                color: rgb(240, 197, 46);
+            }
+            &:active {
+                opacity: 0.6;
+            }
+        }        
+    }
+    .user {
+        width: 50%;
+        padding: 0 0 12px;
+        font-size: 0;
+        text-align: right;
+        &__item {
+            float: none;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 15px;
+            margin-right: 40px;            
+            color: #fff;
+            &--login:hover::before {                
+                background-position: -20px -924px;
+            }
+            &--basket:hover::before {
+                background-position: -20px -124px;
+            }
+            &--compare:hover::before {
+                background-position: -20px -276px;
+            }
+            &:active {
+                opacity: 0.3;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            &--login::before {                
+                background-position: -20px -820px;
+            }
+            &--basket::before {
+                background-position: -20px -20px;
+            }
+            &--compare::before {
+                background-position: -20px -176px;
+            }
+        }
+    }
+    .address {
+        float: left;
+        width: (360px/1160px)*100%;
+        margin-top: 23px;
+        font-size: 15px;
+        line-height: 30px;
+        font-weight: 300;
+        font-family: @fontSecondLight, sans-serif;
+        letter-spacing: 0;
+        color: #fff;
+    }
+    .menu {
+        float: left;
+        width: (450px/1160px)*100%;
+        font-size: 0;
+        margin-top: 29px;
+        padding: 0 4px;
+        &__item {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 40px;
+            &:last-child {
+                margin-right: 0;
+            }            
+        }
+        &__link {
+            font-size: 18px;
+            color: #fff;
+            &:hover {
+                opacity: 0.6;
+            }
+            &:active {
+                opacity: 0.3;
+            }
+        }
+
+    }
+    .tel-numb {
+        margin-top: 23px;
+        float: right;
+        color: #fff;
+        font-size: 15px;
+        line-height: 30px;
+        font-weight: 300;
+        font-family: @fontSecondLight, sans-serif;
+        &__link {
+            display: inline;
+            color: #fff;
+        }
+    }
+}
+
+.social {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-top: 45px;
+    padding-left: 40px;    
+    font-size: 0;
+    text-align: center;
+    &::before{        
+        .line(#ffe27f; 61px; 80px);
+        left: 0;
+    }
+    .social__link {
+        display: inline-block;
+        vertical-align: top;
+        width: 39px;
+        height: 38px;
+        margin-right: 15px;
+        background-image: url(@path);
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        &:hover {
+            opacity: 0.6;
+        }
+        &:active {
+            opacity: 0.2;
+        }        
+        &--fb {
+            background-position: -20px -326px;
+        }
+        &--inst {
+            background-position: -20px -552px;
+        }
+        &--tw {
+            background-position: -20px -742px;
+        }
+        &--academy {
+            float: right;
+            width: 27px;
+            height: 34px;
+            margin-right: 0;
+            background-position: -20px -404px;
+            opacity: 1;
+            &:hover {
+                opacity: 1;
+                background-position-y: -478px;  
+            }
+            &:active {
+                opacity: 0.3;
+            }
+        }
+    }
+    
 }
 
 .none {
