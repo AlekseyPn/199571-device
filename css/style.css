@@ -1070,6 +1070,13 @@ ul li {
 .company__contact .company__text {
   margin-bottom: 38px;
 }
+.company__btn:hover::before {
+  top: 0;
+  bottom: 0;
+}
+.company__btn:active {
+  color: rgba(0, 0, 0, 0.3);
+}
 .page-footer {
   margin-top: 34px;
   background: #444;
