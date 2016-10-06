@@ -107,6 +107,20 @@ img {
     height: auto;
 }
 
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
 a {
     display: block;
     color: rgba(0, 0, 0, 1);
@@ -619,7 +633,8 @@ ul {
 
 .company {    
     width: 100%;
-    margin-top: 96px;    
+    margin-top: 96px;
+    margin-top: 34px;    
     &--line {
         &::before {
         content: "";
@@ -694,8 +709,7 @@ ul {
     
 }
 
-.page-footer {
-    margin-top: 34px;
+.page-footer {    
     background: #444;
     padding: 60px 0;
     .logo {
@@ -857,6 +871,7 @@ ul {
     
 }
 
+@import "style-catalog.less";
 .none {
     display: none;
 }
