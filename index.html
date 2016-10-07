@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Девайс</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
@@ -21,7 +21,6 @@
             <a href="#" class="user__item user__item--login">Войти</a>
             <a href="#" class="user__item user__item--basket">Корзина</a>
             <a href="#" class="user__item user__item--compare">Сравнить</a>
-        </div>
         </div>
         <div class="menu clearfix">
             <nav class="menu__catalog">
@@ -225,7 +224,7 @@
                     <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
                 </ul>
             </nav>
-            <p class="tel-numb">Тел.:<a href="tel:+7 495 495 95 95" class="tel-numb__link">+7 (495) 495-95-95</a></p>
+            <p class="tel-numb">Тел.:<a href="tel:+74954959595" class="tel-numb__link">+7 (495) 495-95-95</a></p>
             <div class="social clearfix">
                 <a href="#" class="social__link social__link--fb">Facebook</a>
                 <a href="#" class="social__link social__link--inst">Instagram</a>
@@ -236,17 +235,17 @@
     </footer>
     <div class="modal-contents">
         <button type="button" class="modal-contents__close">Закрыть</button>
-        <form action="" class="modal-contents__form">
+        <form action="#" class="modal-contents__form" method="GET">
             <p>
                 <label for="form-name">Ваше имя:</label>
-                <input type="text" name id="form-name" placeholder="Представьтесь, пожалуйста">
+                <input type="text" name="name" id="form-name" placeholder="Представьтесь, пожалуйста">
             </p>
             <p>
                 <label for="form-email">Ваш e-mail:</label>
                 <input type="email" name="email" id="form-email" placeholder="Для отправки ответа">
             </p>
             <label for="form-textarea">Текст письма:</label>
-            <textarea name="" id="" cols="30" rows="10" class="modal-contents__textarea" placeholder="В свободной форме"></textarea>
+            <textarea name="textarea" id="form-textarea" cols="30" rows="10" class="modal-contents__textarea" placeholder="В свободной форме"></textarea>
             <button class="modal-contents__submit" type="submit">Отправить</button>
         </form>
     </div>
@@ -258,7 +257,7 @@
         </div>
     </div>
     <div class="modal-overlay"></div>
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
 </body>
 
 </html>

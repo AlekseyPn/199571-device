@@ -15,11 +15,12 @@ function openModal(click, popupVar, overlayVar) {
         popup.scrollIntoView(top);
     })
 };
+
 function closeModal(click, popupVar, overlayVar) {
     click.addEventListener("click", function(event) {
         event.preventDefault();
         popupVar.classList.remove("modal-contents--show");
-        overlayVar.classList.remove("modal-overlay--show");        
+        overlayVar.classList.remove("modal-overlay--show");
     })
 };
 
@@ -28,12 +29,3 @@ openModal(mapOpen, popupMap, overlay);
 closeModal(popupClose, popup, overlay);
 closeModal(overlay, popup, overlay);
 closeModal(mapClose, popupMap, overlay);
-
-
-
-// popupOpen.addEventListener("click", function(event) {
-//     event.preventDefault();
-//     popup.classList.add("modal-contents--show");
-//     overlay.classList.add("modal-overlay--show");
-//     inputName.focus();
-// });
