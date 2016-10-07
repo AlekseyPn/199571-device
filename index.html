@@ -196,13 +196,13 @@
                         <a href="#" class="company__link">ЖелДорЭкспедиция</a>
                     </li>
                 </ul>
-                <a href="#" class="company__btn btn">Подробнее о нас</a>
+                <a href="#" class="company__btn">Подробнее о нас</a>
             </div>
             <div class="company__contact company--line">
                 <h2 class="company__title">Контакты</h2>
                 <p class="company__text">Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
                 <div class="company__map"><img src="img/map-picture.jpg" alt="Карта" class="company__picture"></div>
-                <a href="#" class="company__btn btn">Напишите нам</a>
+                <a href="#" class="company__btn company__btn--modal">Напишите нам</a>
             </div>
         </div>
     </main>
@@ -234,6 +234,31 @@
             </div>
         </div>
     </footer>
+    <div class="modal-contents">
+        <button type="button" class="modal-contents__close">Закрыть</button>
+        <form action="" class="modal-contents__form">
+            <p>
+                <label for="form-name">Ваше имя:</label>
+                <input type="text" name id="form-name" placeholder="Представьтесь, пожалуйста">
+            </p>
+            <p>
+                <label for="form-email">Ваш e-mail:</label>
+                <input type="email" name="email" id="form-email" placeholder="Для отправки ответа">
+            </p>
+            <label for="form-textarea">Текст письма:</label>
+            <textarea name="" id="" cols="30" rows="10" class="modal-contents__textarea" placeholder="В свободной форме"></textarea>
+            <button class="modal-contents__submit" type="submit">Отправить</button>
+        </form>
+    </div>
+    <div class="modal-map">
+        <button type="button" class="modal-map__close">Закрыть</button>
+        <div class="modal-map__iframe">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.1123749473654!2d37.527429316022086!3d55.68703400452984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsIDExOTMxMQ!5e0!3m2!1sru!2sru!4v1475842101854"
+                width="994" height="593" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

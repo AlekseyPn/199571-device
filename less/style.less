@@ -870,14 +870,173 @@ ul {
     }
     
 }
-
 @import "style-catalog.less";
-.none {
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     display: none;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    &--show {
+        display: block;
+    }
 }
 
+.modal-contents {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;    
+    width: 960px;
+    margin-left: -480px;
+    padding: 100px 100px 80px;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
+    z-index: 20;    
+    &__close {
+        position: absolute;
+        top: 22px;
+        right: 22px;
+        width: 55px;
+        height: 54px;
+        font-size: 0;
+        background-color: rgba(240, 197, 46, 0.5);
+        border-radius: 50%;        
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 26px;
+            left: 12px;
+            width: 31px;
+            height: 2px;
+            background: #fff;
+        }
+        &::before {
+            transform: rotate(-45deg);
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+    }
+    &__form {
+        p {
+            float: left;
+            width: (360px/760px)*100%;
+            margin: 0;
+            margin-right: 40px;
+            margin-bottom: 35px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            
+        }
+        label {
+            display: block;                     
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 18px;            
+        }
+        input {
+            width: 100%;
+            padding: 14px 20px;
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 300;
+            font-family: @fontSecondLight, sans-serif;
+            background: #f3f3f3;
+            border: none;
+            outline: none;
+            &:hover {
+                box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.7);
+            }
+            &:focus {
+                outline: 2px solid #f0c52e;
+            }
+        }
+        textarea {
+            width: 100%;
+            margin-bottom: 45px;
+            padding: 14px 20px;
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 300;
+            font-family: @fontSecondLight, sans-serif;
+            background: #f3f3f3;
+             &:hover {
+                box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.7);
+            }
+            &:focus {
+                outline: 2px solid #f0c52e;
+            }
+        }                       
+    }
+    &__submit {
+        .btn(#ffc600; 17px; 200px; 760px; block);
+        &:hover::before {
+            top: 0;
+            bottom: 0;
+        }
+        &:active {
+            color: rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+.modal-map {
+    position: absolute;
+    bottom: 384px;
+    left: 50%;
+    margin-left: -497px;
+    display: none;
+    width: 994px;
+    box-shadow: 0 10px 20px rgba(4, 6, 6, 0.2);
+    z-index: 20;
+    &__close {
+        position: absolute;
+        top: 22px;
+        right: 22px;
+        width: 55px;
+        height: 54px;
+        font-size: 0;
+        background-color: rgba(240, 197, 46, 0.5);
+        border-radius: 50%;        
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 26px;
+            left: 12px;
+            width: 31px;
+            height: 2px;
+            background: #fff;
+        }
+        &::before {
+            transform: rotate(-45deg);
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+    }    
+    &__iframe {
+        iframe {
+            display: block;
+            width: 994px;
+            height: 593px;           
+            border: none;
+        }
+    }
+}
+.modal-contents--show {
+    display: block;
+}
 
-.clearfix{
+.clearfix {
     &::before,
     &::after {
         content: "";
