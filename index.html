@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Девайс</title>
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
         <div class="site-search">
             <form class="site-search__form" action="#" method="GET">
                 <label for="search">Найти товар</label>
-                <input class="site-search__input" type="search" name="search" id="search" placeholder="Поиск по сайту">
+                <input class="site-search__input" type="search" name="search" id="search" placeholder="Поиск по сайту" required>
                 <button class="site-search__button" type="submit">Найти</button>
             </form>
         </div>
@@ -200,7 +200,7 @@
             <div class="company__contact company--line">
                 <h2 class="company__title">Контакты</h2>
                 <p class="company__text">Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
-                <div class="company__map"><img src="img/map-picture.jpg" alt="Карта" class="company__picture"></div>
+                <div class="company__map"><img src="img/map-picture.jpg" alt="Карта" class="company__picture" width="560" height="222"></div>
                 <a href="#" class="company__btn company__btn--modal">Напишите нам</a>
             </div>
         </div>
@@ -238,14 +238,14 @@
         <form action="#" class="modal-contents__form" method="GET">
             <p>
                 <label for="form-name">Ваше имя:</label>
-                <input type="text" name="name" id="form-name" placeholder="Представьтесь, пожалуйста">
+                <input type="text" name="name" id="form-name" placeholder="Представьтесь, пожалуйста" required>
             </p>
             <p>
                 <label for="form-email">Ваш e-mail:</label>
-                <input type="email" name="email" id="form-email" placeholder="Для отправки ответа">
+                <input type="email" name="email" id="form-email" placeholder="Для отправки ответа" required>
             </p>
             <label for="form-textarea">Текст письма:</label>
-            <textarea name="textarea" id="form-textarea" cols="30" rows="10" class="modal-contents__textarea" placeholder="В свободной форме"></textarea>
+            <textarea name="textarea" id="form-textarea" cols="30" rows="10" class="modal-contents__textarea" placeholder="В свободной форме" required></textarea>
             <button class="modal-contents__submit" type="submit">Отправить</button>
         </form>
     </div>
